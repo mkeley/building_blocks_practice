@@ -1,0 +1,21 @@
+def caesar_cipher(offset, string)
+  return_str = ""
+  alph = "abcdefghiklmnopqrstuvwxyz" # I defined the alphabet with 26 characters
+  
+  string.split("").each {|c| # I used the split string method & defined the character position as c string
+  if c != " " # If the character is not blank define the character as below
+    c_index = alph.index(c) # I defined the character index as equal to the alphabet index
+    new_pos = c_index + offset # the method is an offest method
+    new_alph_index = new_pos % 26 # there are 26 positions available in the index
+    return_str = return_str + alph[new_alph_index] # the return value of the string s equal to the value of the the string + the new offset value
+   else
+    return_str = return_str + " "
+  end
+  }
+  return return_str
+end
+
+
+puts caesar_cipher(563, "abc")
+#puts caesar_cipher(23,"abc xyz")
+
